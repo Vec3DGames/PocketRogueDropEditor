@@ -15,6 +15,17 @@ namespace DropEditor
         public string Name { get; set; }
         public List<DropDefinition> Drops { get; set; }
 
+        public NpcDropDefinition()
+        {
+
+        }
+
+        public NpcDropDefinition(int id, string name, List<DropDefinition> drops)
+        {
+            Id = id;
+            Name = name;
+            Drops = drops;
+        }
         public override string ToString()
         {
             return Name;

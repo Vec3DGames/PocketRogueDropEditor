@@ -34,5 +34,17 @@ namespace DropEditor.Properties {
                 this["JsonFilePath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ItemJsonFilePath {
+            get {
+                return ((string)(this["ItemJsonFilePath"]));
+            }
+            set {
+                this["ItemJsonFilePath"] = value;
+            }
+        }
     }
 }

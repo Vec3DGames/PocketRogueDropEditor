@@ -38,8 +38,8 @@
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newDropToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dropTablePanel = new System.Windows.Forms.Panel();
+            this.dropDefinitionGridView = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dropRateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,8 +48,8 @@
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.npcDropTablesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dropTablePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dropDefinitionGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dropDefinitionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.npcDropTablesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.npcDropTablesBindingSource)).BeginInit();
@@ -63,7 +63,7 @@
             this.addToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(772, 45);
+            this.menuStrip1.Size = new System.Drawing.Size(772, 47);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -75,32 +75,35 @@
             this.toolStripSeparator1,
             this.loadItemsToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(70, 41);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(70, 43);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // loadDropsToolStripMenuItem
             // 
             this.loadDropsToolStripMenuItem.Name = "loadDropsToolStripMenuItem";
-            this.loadDropsToolStripMenuItem.Size = new System.Drawing.Size(262, 42);
+            this.loadDropsToolStripMenuItem.Size = new System.Drawing.Size(349, 42);
             this.loadDropsToolStripMenuItem.Text = "Load Drops";
             this.loadDropsToolStripMenuItem.Click += new System.EventHandler(this.loadDropsToolStripMenuItem_Click);
             // 
             // saveDropsToolStripMenuItem
             // 
             this.saveDropsToolStripMenuItem.Name = "saveDropsToolStripMenuItem";
-            this.saveDropsToolStripMenuItem.Size = new System.Drawing.Size(262, 42);
+            this.saveDropsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveDropsToolStripMenuItem.Size = new System.Drawing.Size(349, 42);
             this.saveDropsToolStripMenuItem.Text = "Save Drops";
+            this.saveDropsToolStripMenuItem.Click += new System.EventHandler(this.saveDropsToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(259, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(346, 6);
             // 
             // loadItemsToolStripMenuItem
             // 
             this.loadItemsToolStripMenuItem.Name = "loadItemsToolStripMenuItem";
-            this.loadItemsToolStripMenuItem.Size = new System.Drawing.Size(262, 42);
+            this.loadItemsToolStripMenuItem.Size = new System.Drawing.Size(349, 42);
             this.loadItemsToolStripMenuItem.Text = "Load Items";
+            this.loadItemsToolStripMenuItem.Click += new System.EventHandler(this.loadItemsToolStripMenuItem_Click);
             // 
             // addToolStripMenuItem
             // 
@@ -108,48 +111,52 @@
             this.newTableToolStripMenuItem,
             this.newDropToolStripMenuItem});
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(78, 41);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(78, 43);
             this.addToolStripMenuItem.Text = "Add";
             // 
             // newTableToolStripMenuItem
             // 
             this.newTableToolStripMenuItem.Name = "newTableToolStripMenuItem";
-            this.newTableToolStripMenuItem.Size = new System.Drawing.Size(248, 42);
+            this.newTableToolStripMenuItem.Size = new System.Drawing.Size(298, 42);
             this.newTableToolStripMenuItem.Text = "New Table";
+            this.newTableToolStripMenuItem.Click += new System.EventHandler(this.newTableToolStripMenuItem_Click);
             // 
             // newDropToolStripMenuItem
             // 
             this.newDropToolStripMenuItem.Name = "newDropToolStripMenuItem";
-            this.newDropToolStripMenuItem.Size = new System.Drawing.Size(248, 42);
+            this.newDropToolStripMenuItem.Size = new System.Drawing.Size(298, 42);
             this.newDropToolStripMenuItem.Text = "New Drop";
+            this.newDropToolStripMenuItem.Click += new System.EventHandler(this.newDropToolStripMenuItem_Click);
             // 
-            // panel1
+            // dropTablePanel
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dropTablePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(247, 45);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(525, 476);
-            this.panel1.TabIndex = 2;
+            this.dropTablePanel.Controls.Add(this.dropDefinitionGridView);
+            this.dropTablePanel.Location = new System.Drawing.Point(247, 45);
+            this.dropTablePanel.Name = "dropTablePanel";
+            this.dropTablePanel.Size = new System.Drawing.Size(525, 476);
+            this.dropTablePanel.TabIndex = 2;
+            this.dropTablePanel.Visible = false;
             // 
-            // dataGridView1
+            // dropDefinitionGridView
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dropDefinitionGridView.AutoGenerateColumns = false;
+            this.dropDefinitionGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dropDefinitionGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.amountDataGridViewTextBoxColumn,
             this.dropRateDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.dropDefinitionBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowTemplate.Height = 37;
-            this.dataGridView1.Size = new System.Drawing.Size(525, 476);
-            this.dataGridView1.TabIndex = 0;
+            this.dropDefinitionGridView.DataSource = this.dropDefinitionBindingSource;
+            this.dropDefinitionGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dropDefinitionGridView.Location = new System.Drawing.Point(0, 0);
+            this.dropDefinitionGridView.Name = "dropDefinitionGridView";
+            this.dropDefinitionGridView.RowHeadersVisible = false;
+            this.dropDefinitionGridView.RowTemplate.Height = 37;
+            this.dropDefinitionGridView.Size = new System.Drawing.Size(525, 476);
+            this.dropDefinitionGridView.TabIndex = 0;
+            this.dropDefinitionGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dropTables_CellEndEdit);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -185,12 +192,12 @@
             this.nameDataGridViewTextBoxColumn});
             this.npcDropTablesDataGridView.DataSource = this.npcDropTablesBindingSource;
             this.npcDropTablesDataGridView.Dock = System.Windows.Forms.DockStyle.Left;
-            this.npcDropTablesDataGridView.Location = new System.Drawing.Point(0, 45);
+            this.npcDropTablesDataGridView.Location = new System.Drawing.Point(0, 47);
             this.npcDropTablesDataGridView.Name = "npcDropTablesDataGridView";
             this.npcDropTablesDataGridView.ReadOnly = true;
             this.npcDropTablesDataGridView.RowHeadersVisible = false;
             this.npcDropTablesDataGridView.RowTemplate.Height = 37;
-            this.npcDropTablesDataGridView.Size = new System.Drawing.Size(240, 476);
+            this.npcDropTablesDataGridView.Size = new System.Drawing.Size(240, 474);
             this.npcDropTablesDataGridView.TabIndex = 3;
             this.npcDropTablesDataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.npcDropTables_CellMouseDown);
             // 
@@ -212,16 +219,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(772, 521);
             this.Controls.Add(this.npcDropTablesDataGridView);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.dropTablePanel);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "PocketRogue Drop Editor";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_Closing);
             this.Shown += new System.EventHandler(this.MainForm_Show);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.dropTablePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dropDefinitionGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dropDefinitionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.npcDropTablesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.npcDropTablesBindingSource)).EndInit();
@@ -241,11 +249,11 @@
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newTableToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newDropToolStripMenuItem;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel dropTablePanel;
         private System.Windows.Forms.DataGridView npcDropTablesDataGridView;
         private System.Windows.Forms.BindingSource npcDropTablesBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dropDefinitionGridView;
         private System.Windows.Forms.BindingSource dropDefinitionBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;

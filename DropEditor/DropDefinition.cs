@@ -12,11 +12,16 @@ namespace DropEditor
         public int Amount { get; set; }
         public int DropRate { get; set; }
 
+        public DropDefinition()
+        {
+
+        }
+
         public DropDefinition(int id, int amount, int dropRate)
         {
-            this.Id = id;
-            this.Amount = amount;
-            this.DropRate = dropRate;
+            Id = id;
+            Amount = amount;
+            DropRate = dropRate;
         }
     }
 }
