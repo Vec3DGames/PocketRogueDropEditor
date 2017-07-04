@@ -93,7 +93,6 @@ namespace DropEditor
             catch (Exception)
             {
                 openJsonFile(fileType);
-                //MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
             }
         }
 
@@ -172,7 +171,7 @@ namespace DropEditor
 
         private void addTableButton_Click(object sender, EventArgs e)
         {
-            NewTableForm newTableForm = ((Button)sender).TopLevelControl as NewTableForm;
+            NewTableForm newTableForm = (NewTableForm)((Button)sender).TopLevelControl;
             int id = Convert.ToInt32(newTableForm.idTextBox.Text);
             string name = newTableForm.nameTextBox.Text;
             NpcDropDefinition dropTable = new NpcDropDefinition(id, name, new List<DropDefinition>());
@@ -229,7 +228,7 @@ namespace DropEditor
 
         private void newDropToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!this.dropTablePanel.Visible)
+            if (!dropTablePanel.Visible)
                 return;
 
             List<string> itemNames = itemDefintions?.Select(itemDefinition => itemDefinition.Name).ToList();
