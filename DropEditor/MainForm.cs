@@ -199,6 +199,12 @@ namespace DropEditor
 
         private void dropTables_CellEndEdit(object sender, EventArgs e)
         {
+            DataGridViewRow row = ((DataGridView)sender).CurrentRow;
+            DropDefinition drop = (DropDefinition)row.DataBoundItem;
+
+            if (drop.Amount == 0)
+                dropDefinitionBindingSource.Remove(drop);
+
             NotifySaveNeeded();
         }
 
@@ -246,12 +252,27 @@ namespace DropEditor
             newDropForm.idTextBox.AutoCompleteMode = AutoCompleteMode.Suggest;
             newDropForm.idTextBox.KeyDown += idTextBod_KeyEnter;
 
+            newDropForm.addDropButton.Click += addDropButton_Click;
+
             newDropForm.ShowDialog(this);
         }
 
         private void addDropButton_Click(object sender, EventArgs e)
         {
+            NewDropForm newDropForm = ((Button)sender).TopLevelControl as NewDropForm;
+            int id, amount, dropRate;
 
+            Int32.TryParse(newDropForm.idTextBox.Text, out id);
+            Int32.TryParse(newDropForm.amountTextBox.Text, out amount);
+            Int32.TryParse(newDropForm.dropRateTextBox.Text, out dropRate);
+
+            if (id == 0 || amount == 0 || dropRate == 0)
+                return;
+
+            DropDefinition drop = new DropDefinition(id, amount, dropRate);
+            dropDefinitionBindingSource.Add(drop);
+            newDropForm.Close();
+            NotifySaveNeeded();
         }
 
         private void nameTextBox_KeyEnter(object sender, KeyEventArgs e)

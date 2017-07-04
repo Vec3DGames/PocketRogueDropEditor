@@ -63,7 +63,7 @@
             this.addToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(772, 47);
+            this.menuStrip1.Size = new System.Drawing.Size(772, 45);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -75,7 +75,7 @@
             this.toolStripSeparator1,
             this.loadItemsToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(70, 43);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(70, 41);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // loadDropsToolStripMenuItem
@@ -111,20 +111,22 @@
             this.newTableToolStripMenuItem,
             this.newDropToolStripMenuItem});
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(78, 43);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(78, 41);
             this.addToolStripMenuItem.Text = "Add";
             // 
             // newTableToolStripMenuItem
             // 
             this.newTableToolStripMenuItem.Name = "newTableToolStripMenuItem";
-            this.newTableToolStripMenuItem.Size = new System.Drawing.Size(298, 42);
+            this.newTableToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
+            this.newTableToolStripMenuItem.Size = new System.Drawing.Size(342, 42);
             this.newTableToolStripMenuItem.Text = "New Table";
             this.newTableToolStripMenuItem.Click += new System.EventHandler(this.newTableToolStripMenuItem_Click);
             // 
             // newDropToolStripMenuItem
             // 
             this.newDropToolStripMenuItem.Name = "newDropToolStripMenuItem";
-            this.newDropToolStripMenuItem.Size = new System.Drawing.Size(298, 42);
+            this.newDropToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
+            this.newDropToolStripMenuItem.Size = new System.Drawing.Size(342, 42);
             this.newDropToolStripMenuItem.Text = "New Drop";
             this.newDropToolStripMenuItem.Click += new System.EventHandler(this.newDropToolStripMenuItem_Click);
             // 
@@ -192,12 +194,12 @@
             this.nameDataGridViewTextBoxColumn});
             this.npcDropTablesDataGridView.DataSource = this.npcDropTablesBindingSource;
             this.npcDropTablesDataGridView.Dock = System.Windows.Forms.DockStyle.Left;
-            this.npcDropTablesDataGridView.Location = new System.Drawing.Point(0, 47);
+            this.npcDropTablesDataGridView.Location = new System.Drawing.Point(0, 45);
             this.npcDropTablesDataGridView.Name = "npcDropTablesDataGridView";
             this.npcDropTablesDataGridView.ReadOnly = true;
             this.npcDropTablesDataGridView.RowHeadersVisible = false;
             this.npcDropTablesDataGridView.RowTemplate.Height = 37;
-            this.npcDropTablesDataGridView.Size = new System.Drawing.Size(240, 474);
+            this.npcDropTablesDataGridView.Size = new System.Drawing.Size(240, 476);
             this.npcDropTablesDataGridView.TabIndex = 3;
             this.npcDropTablesDataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.npcDropTables_CellMouseDown);
             // 
